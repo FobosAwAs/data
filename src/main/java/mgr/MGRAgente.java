@@ -7,6 +7,7 @@ import dto.DTOcliente;
 import dto.DTOorden;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class MGRAgente implements MGRAgenteIMP {
 
@@ -55,4 +56,17 @@ public class MGRAgente implements MGRAgenteIMP {
 
     }
 
+    @Override
+    public List<DTOagente> listado() {
+        ManagerConexion managerConexion = ManagerConexion.getIntance();
+        managerConexion.reconectar();
+        try {
+            return agentevar.listado();
+        } catch (Exception e) {
+            managerConexion.rollback();
+        } finally {
+            managerConexion.close();
+        }
+        return null;
+    }
 }

@@ -13,8 +13,7 @@ public class Conexion {
     public Conexion() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/ventas", "root", "toor"); 
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ventas", "root", "toor");
             con.setAutoCommit(false);
         } catch (Exception e) {
             System.out.println(e);

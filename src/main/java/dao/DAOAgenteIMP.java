@@ -3,6 +3,7 @@ package dao;
 import dto.DTOagente;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public interface DAOAgenteIMP {
 
@@ -13,4 +14,6 @@ public interface DAOAgenteIMP {
     void update(DTOagente dtOagente);
 
     void eliminar(DTOagente dtOagente);
+
+    public List<DTOagente> listado();
 }

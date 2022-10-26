@@ -2,7 +2,6 @@ package entrega.data.data.controler;
 
 import dto.DTOcliente;
 import dto.DTOorden;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import mgr.MGRCliente;
 import mgr.MGRClienteIMP;
 import mgr.MGROrden;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping(path = "/orden")
 public class ControlerOrden {
     @PostMapping(path = "/save")
